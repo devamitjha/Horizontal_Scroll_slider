@@ -1,0 +1,112 @@
+*{
+    margin:0;
+    padding:0;
+}
+$primary_color:#2757b5;
+$light_color:#eee;
+$white_color:#fff;
+
+body{
+    width:100%;
+    height:100vh;
+    background-color: $light_color;
+    margin:0;
+    padding:0;
+}
+.dFlex{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width:100%;
+}
+header{
+    @extend .dFlex;
+    height:10vw;
+    background-color: $white_color;
+    box-shadow: 2px 12px 5px -8px rgba(0,0,0,0.10);
+    padding:1vw 4vw;
+    box-sizing: border-box;
+    position:relative;
+    .menu_icon{
+        padding:1vw;
+        position:absolute;
+        top:50%;
+        left:4vw;
+        transform:translateY(-50%);
+        i{
+            color:$primary_color;
+        }
+    }
+    .logo_wrapper{
+        @extend .dFlex;
+        .logo{
+            width:8vw;
+            height:8vw;
+            border:1px solid $light_color;
+            border-radius: 100%;
+            img{
+                width:100%;
+                height:100%;
+                object-fit: cover;
+                display:block;
+            }
+        }
+    }//logo_wrapper
+}//header
+
+.slider_wrapper_{
+    display: block;
+    width:100%;
+    .title{
+        font-family: 'Cardo', serif;
+        font-size:12vw;
+        text-align: center;
+        font-weight: 400;//normal size, 500=semi bold, 600=bold
+        margin-bottom:5vw;
+        line-height: 1.2;
+        margin-top:5vw;
+        color:$primary_color;
+    }
+}//slider_wrapper_
+
+//owl-carousel
+.owl-carousel{
+    .owl-item{
+        transform:scale(.9);
+        transition:all .3s ease-in-out;
+        opacity: .7;
+        &.active{
+            transform: scale(1);
+            opacity:1;
+        }
+        .item{
+            width:100%;
+            height:60vh;
+            img{
+                width:100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+}//owl-carousel
+
+//owl-dots
+.owl-theme{
+    .owl-dots{
+        .owl-dot{
+            span{
+                width:25px;
+                height:5px;
+                background-color: rgba($primary_color, .5);
+                border-radius: 3px;
+                margin:0 5px;
+            }
+            &.active{
+                span{
+                    background-color: $primary_color;
+                }
+            }
+        }
+    }
+}
